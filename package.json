@@ -2,7 +2,7 @@
     "name": "powershellformatter",
     "displayName": "PowershellFormatter",
     "description": "A customizable formatting tool for PowerShell scripts",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "Descalon",
     "engines": {
         "vscode": "^1.5.0"
