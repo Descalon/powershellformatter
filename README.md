@@ -16,6 +16,6 @@ I will try to add some settings at some point in the future. (Yup. The classic #
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.1
 
 Initial release. Does basically nothing but finds and replaces keywords and adds padding to brackets.
