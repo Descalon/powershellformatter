@@ -15,9 +15,32 @@ import * as myExtension from '../src/extension';
 suite("#applyRules()", () =>{
     var psd = new myExtension.PowerShellDocument();
     test("Should rewrite the file to CamelCase all keywords",() => {
-        let input = "if";
-        let expectedOutput = "If";
-        let output = psd.applyRules(input);
-        assert.equal(output,expectedOutput);
+        let input = "iF, FunCTiOn, WhIlE";
+        let expected = "If, Function, While";
+        let actual = psd.applyRules(input);
+        assert.equal(actual,expected);
+    });
+    test("Should rewrite tabs to spaces",() =>{
+        let input = "	";
+        let expected = "    ";
+        let actual = psd.applyRules(input);
+        assert.equal(actual,expected);
+    });
+    test("Should pad parentheses", () => {
+        let input = "something something(){}"
+        let expected = "something something () {}"
+        let actual = psd.applyRules(input);
+        assert.equal(actual,expected);
+    });
+    test("should remove newline before opening curly bracket", () => {
+        let input = `Function somefunction ()
+        {
+            //Something
+        }`;
+        let expected = `Function somefunction () {
+            //Something
+        }`
+        let actual = psd.applyRules(input);
+        assert.equal(actual,expected);
     });
 })
