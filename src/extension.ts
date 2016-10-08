@@ -98,8 +98,8 @@ let rules: [RegExp,string][] = [
     [/\b[uU][nN][tT][iI][lL]\b/g, 'Until'],
     [/\b[wW][hH][iI][lL][eE]\b/g, 'While'],
     [/\b[wW][oO][rR][kK][fF][lL][oO][wW]\b/g, 'Workflow'],
+    [/\n({)\n/g, "$1\n"],
     [/([^\s])(\()/g, "$1 $2"],
     [/(\))([^\s])/g, "$1 $2"],
     [/(\})([^\s])/g, "$1 $2"],
-    [/\n({)\n/g, "$1\n"]
 ];
